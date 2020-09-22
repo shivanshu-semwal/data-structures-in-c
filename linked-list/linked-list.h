@@ -1,3 +1,6 @@
+#ifndef linked_list
+#define linked_list
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -38,3 +41,5 @@ void display(node *q);
  * Count the number of nodes in teh linked list
  */
 int count(node *q);
+
+#endif

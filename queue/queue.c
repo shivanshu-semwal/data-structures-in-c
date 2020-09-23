@@ -1,30 +1,28 @@
 #include "queue.h"
 
-void addq(node **front, node **rear, int data){
-    node *temp=malloc(sizeof(node));
+void addq(node **front, node **rear, int data) {
+    node *temp = malloc(sizeof(node));
     temp->data = data;
     temp->link = NULL;
 
     // if the queue is empty
-    if(*front == NULL){
+    if (*front == NULL) {
         *front = temp;
-    }
-    else{
+    } else {
         (*rear)->link = temp;
     }
     *rear = temp;
 }
 
-int delq(node **front, node **rear){
+int delq(node **front, node **rear) {
     node *temp;
     int data;
 
     // if queue is empty
-    if(*front == NULL){
+    if (*front == NULL) {
         fprintf(stderr, "warning: queue is empty");
         return -1;
-    }
-    else{
+    } else {
         temp = *front;
         *front = (*front)->link;
 
@@ -42,9 +40,9 @@ void displayq(node *front) {
     printf("NULL\n");
 }
 
-int countq(node *front){
+int countq(node *front) {
     int count;
-    while(front!=NULL){
+    while (front != NULL) {
         front = front->link;
         count++;
     }

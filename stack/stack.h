@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* 
+ * Node structure for linked list
+ */
 typedef struct node{
     int data;
     struct node *link;

@@ -106,6 +106,45 @@ void selection_sort(node **start) {
     } //ouer loop
 }
 
+void bubble_sort(node **start){
+    node *p, *q, *r, *s, *temp;
+    s=NULL;
+    while(s!=(*start)->link){
+        r=p=*start;
+        q=p->link;
+
+        while(p!=s){
+            if(p->data > q->data){
+                if(p==*start){
+                    temp = q->link;
+                    q->link = p;
+                    p->link = temp;
+
+                    *start = q;
+                    r = q;
+                }//
+                else{
+                    temp = q->link;
+                    q->link = p;
+                    p->link = temp;
+
+                    r->link = q;
+                    r = q;
+                }
+            }
+            else{
+                r=p;
+                p=p->link;
+            }
+            q = p->link;
+            if(q==s){
+                s=p;
+            }
+        }
+
+    }
+}
+
 int main() {
     node *a = NULL;
     append(&a, 1);
@@ -117,7 +156,15 @@ int main() {
 
     // now sorting
     selection_sort(&a);
+    display(a);
 
+    append(&a, 11);
+    append(&a, 1);
+    append(&a, 3);
+    append(&a, 41);
+
+    //sort 
+    bubble_sort(&a);
     display(a);
     return 0;
 }

@@ -41,4 +41,18 @@ void printTreeV(btreenode *);
  */
 void printTreeH(btreenode *);
 
+/* 
+ * Delete a node from binary tree
+ */
+void delete (btreenode **, int);
+
+/* 
+ * search an node with given data
+ * return the address of the node found else NULL
+ * address of parent 
+ * and whether the node is found or node
+ * search(root, element_to_search, parent, found)
+ */
+btreenode *search(btreenode **, int, btreenode **, int *);
+
 #endif

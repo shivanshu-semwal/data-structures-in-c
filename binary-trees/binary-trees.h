@@ -51,8 +51,8 @@ void delete (btreenode **, int);
  * return the address of the node found else NULL
  * address of parent 
  * and whether the node is found or node
- * search(root, element_to_search, parent, found)
+ * search(&root, element_to_search, &parent)
  */
-btreenode *search(btreenode **, int, btreenode **, int *);
+btreenode *search(btreenode **, int, btreenode **);
 
 #endif

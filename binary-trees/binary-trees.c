@@ -135,16 +135,13 @@ void printTreeH(btreenode *tree) {
     printTree2(tree, &di, depth);
 }
 
-btreenode *search(btreenode **root, int num, btreenode **par, int *found) {
+btreenode *search(btreenode **root, int num, btreenode **par) {
     btreenode *q;
     q = *root;
-    *found = 0;
     *par = NULL;
 
     while (q != NULL) {
         if (q->data == num) {
-            *found = 1;
-            // *x = q;
             return q;
         }
         if (q->data > num) {
@@ -158,7 +155,6 @@ btreenode *search(btreenode **root, int num, btreenode **par, int *found) {
 }
 
 void delete (btreenode **root, int num) {
-    int found;
     btreenode *parent, *x, *xsucc;
 
     // if the tree is empty
@@ -170,9 +166,9 @@ void delete (btreenode **root, int num) {
     parent = x = NULL;
 
     // call function to search the node
-    x = search(root, num, &parent, &found);
+    x = search(root, num, &parent);
 
-    if (found == 0) {
+    if (x == NULL) {
         printf("Element not found.\n");
         return;
     }

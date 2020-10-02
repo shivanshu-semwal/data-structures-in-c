@@ -1,11 +1,13 @@
 # Data Structures in C
 
+Guidelines - [Coding style](./naming-convention.md)
+
+## Contents
+
 * Linked List
-  * Using self-referential struct
 * Queue
-  * Using array
-  * Using linked-list
+* Dequeue
 * Stack
-  * Using array
-  * Using linked-list
+* Double-linked list
+* Operations on linked list
 * Binary Tree
